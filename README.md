@@ -1,47 +1,39 @@
-# clean-code-javascript
+# clean-code-javascript-marathi
 
-## Table of Contents
+ओरिजिनल रेपो चे लिंक: https://github.com/ryanmcdermott/clean-code-javascript
 
-1. [Introduction](#introduction)
-2. [Variables](#variables)
-3. [Functions](#functions)
-4. [Objects and Data Structures](#objects-and-data-structures)
-5. [Classes](#classes)
+Disclaimer: हे शब्दशः मराठी अनुवाद नाही आहे, काही शब्द जसे कीवर्ड ला ओरिजिनल भाषेत ठेवण्यात आले आहे.
+
+## अनुक्रमणिका
+
+1. [प्रस्तावना](#प्रस्तावना)
+2. [वेरिएबल्स](#वेरिएबल्स)
+3. [फंक्शन्स](#फंक्शन्स)
+4. [ऑब्जेक्ट्स आणि डेटा स्ट्रक्चर्स](#ऑब्जेक्ट्स-आणि-डेटा-स्ट्रक्चर्स)
+5. [क्लासेस](#क्लासेस)
 6. [SOLID](#solid)
-7. [Testing](#testing)
-8. [Concurrency](#concurrency)
-9. [Error Handling](#error-handling)
-10. [Formatting](#formatting)
-11. [Comments](#comments)
-12. [Translation](#translation)
+7. [टेस्टिंग](#टेस्टिंग)
+8. [काँकरेंसी](#काँकरेंसी)
+9. [एरर हँडलिंग](#एरर-हँडलिन)
+10. [फॉर्मेटिंग](#फॉर्मेटिंग)
+11. [कमेंट्स](#कमेंट्स)
+12. [भाषांतर](#भाषांतर)
 
-## Introduction
+## प्रस्तावना
 
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](https://www.osnews.com/images/comics/wtfm.jpg)
 
-Software engineering principles, from Robert C. Martin's book
-[_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
-adapted for JavaScript. This is not a style guide. It's a guide to producing
-[readable, reusable, and refactorable](https://github.com/ryanmcdermott/3rs-of-software-architecture) software in JavaScript.
+सॉफ्टवेयर इंजीनियरिंग चे तत्व, रॉबर्ट मार्टिन च्या
+[_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) पुस्तकातून,
+JavaScript साठी अनुकूलित केले आहे. हे स्टाइल गाइड नाही आहे. हे JavaScript मधे
+[readable, reusable, and refactorable](https://github.com/ryanmcdermott/3rs-of-software-architecture) योग्य सॉफ्टवेयर तयार करण्यासाठी चे एक मार्गदर्शक आहे.
 
-Not every principle herein has to be strictly followed, and even fewer will be
-universally agreed upon. These are guidelines and nothing more, but they are
-ones codified over many years of collective experience by the authors of
-_Clean Code_.
+येथील प्रत्येक तत्वाचे काटेकोरपणे पालन करणे आवश्यक नाही, आणि त्यातील फारच थोड्या तत्त्वावर सर्वसंमती असेल. ही केवळ मार्गदर्शक तत्त्व आहेत, पण ते _क्लीन कोड_ च्या लेखकांनी अनेक वर्षाच्या सामूहिक अनुभवातून निश्चित केले आहेत.
 
-Our craft of software engineering is just a bit over 50 years old, and we are
-still learning a lot. When software architecture is as old as architecture
-itself, maybe then we will have harder rules to follow. For now, let these
-guidelines serve as a touchstone by which to assess the quality of the
-JavaScript code that you and your team produce.
+सॉफ्टवेयर इंजीनियरिंग हे क्षेत्र अवध्या 50 वर्षाहून अधिक जुने आहे आणि आपण अजूनही त्या बाबत खुप शिकत आहोत. जेव्हा सॉफ्टवेयर आर्किटेक्चर हे मुळ आर्किटेक्चर एवडे जुने होईल, तेव्हा कदाचित आपल्याला अधिक कठोर नियमांचे पालन करावे लागतील. साध्यापुरते, तुम्ही आणि तुमची टीम तयार करत असलेल्या JavaScript कोड च्या गुणवत्ते चे मूल्यमापन करण्यासाठी या मार्गदर्शक तत्त्वांचा एक निकष म्हऊन वापर करा.
 
-One more thing: knowing these won't immediately make you a better software
-developer, and working with them for many years doesn't mean you won't make
-mistakes. Every piece of code starts as a first draft, like wet clay getting
-shaped into its final form. Finally, we chisel away the imperfections when
-we review it with our peers. Don't beat yourself up for first drafts that need
-improvement. Beat up the code instead!
+आणखीन एक गोष्ट म्हणजे: हे माहिती असल्यामुळे तुम्ही त्वरित एक उत्तम सॉफ्टवेयर डेवलपर बनणार नाही, आणि ह्या सगळ्या तत्त्वांचा अनेक वर्ष वापर करत असेल तर असे गृहीत धरू नका की तुमच्या कडून चुक होऊ शकणार नाही. प्रत्येक कोड ची सुरुवात एका पहिल्या ड्राफ्ट पासून होते, जणू काही ओल्या मातीला तिचा अंतिम आकार दिला जात आहे. शेवठी, आपण सहकाऱ्यांसोबत समीक्षा करताना त्यातील दोष मुक्त करतो. सुधारणेची गरज असलेल्या पहिल्या ड्राफ्ट साठी स्वतःला दोष देऊ नका. त्या ऐवेजी कोड वरती आक्रमण करा!
 
 ## **Variables**
 
