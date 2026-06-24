@@ -35,27 +35,27 @@ JavaScript साठी अनुकूलित केले आहे. हे 
 
 आणखीन एक गोष्ट म्हणजे: हे माहिती असल्यामुळे तुम्ही त्वरित एक उत्तम सॉफ्टवेयर डेवलपर बनणार नाही, आणि ह्या सगळ्या तत्त्वांचा अनेक वर्ष वापर करत असेल तर असे गृहीत धरू नका की तुमच्या कडून चुक होऊ शकणार नाही. प्रत्येक कोड ची सुरुवात एका पहिल्या ड्राफ्ट पासून होते, जणू काही ओल्या मातीला तिचा अंतिम आकार दिला जात आहे. शेवठी, आपण सहकाऱ्यांसोबत समीक्षा करताना त्यातील दोष मुक्त करतो. सुधारणेची गरज असलेल्या पहिल्या ड्राफ्ट साठी स्वतःला दोष देऊ नका. त्या ऐवेजी कोड वरती आक्रमण करा!
 
-## **Variables**
+## **वेरिएबल्स**
 
-### Use meaningful and pronounceable variable names
+### अर्थपूर्ण आणि उच्चारण्यास सोपी अशी वेरिएबल्स ची वापरा
 
-**Bad:**
+**खराब:**
 
 ```javascript
 const yyyymmdstr = moment().format("YYYY/MM/DD");
 ```
 
-**Good:**
+**उत्तम:**
 
 ```javascript
 const currentDate = moment().format("YYYY/MM/DD");
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ वर जा](#अनुक्रमणिका)**
 
-### Use the same vocabulary for the same type of variable
+### समान प्रकार च्या वेरिएबल साठी समान शब्दसंग्रह चा वापर करा
 
-**Bad:**
+**खराब:**
 
 ```javascript
 getUserInfo();
@@ -63,35 +63,29 @@ getClientData();
 getCustomerRecord();
 ```
 
-**Good:**
+**उत्तम:**
 
 ```javascript
 getUser();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ वर जा](#अनुक्रमणिका)**
 
-### Use searchable names
+### शोधण्यात आणि वाचण्यात सोपे असतील अशी नावे वापरा
 
-We will read more code than we will ever write. It's important that the code we
-do write is readable and searchable. By _not_ naming variables that end up
-being meaningful for understanding our program, we hurt our readers.
-Make your names searchable. Tools like
-[buddy.js](https://github.com/danielstjules/buddy.js) and
-[ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
-can help identify unnamed constants.
+आपण कोड लिहितो कमी पण वाचतो जास्त. त्यामुळे हे महत्वाचे आहे की आपण जे कोड लिहितो ते वाचायला आणि शोधायला सोपे असेल त्या प्रकारे लिहा. जेव्हा आपण वेरिएबल्स चे नाव ह्या प्रकारे लिहीत नाही तर आपला कोड दुसऱ्याना वाचायला आणि समजायला अवघड जाते. [buddy.js](https://github.com/danielstjules/buddy.js) आणि [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md) सारखे टूल्स unnamed constants ला ओळखण्यास उपयोगी आहे.
 
 **Bad:**
 
 ```javascript
-// What the heck is 86400000 for?
+// 86400000 हे नक्की काय आहे आणि कशा साठी वापरण्यात आले आहे?
 setTimeout(blastOff, 86400000);
 ```
 
 **Good:**
 
 ```javascript
-// Declare them as capitalized named constants.
+// त्यांना capitalized constants मधे डिक्लेअर करा.
 const MILLISECONDS_PER_DAY = 60 * 60 * 24 * 1000; //86400000;
 
 setTimeout(blastOff, MILLISECONDS_PER_DAY);
