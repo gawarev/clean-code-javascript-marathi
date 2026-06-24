@@ -37,7 +37,7 @@ JavaScript साठी अनुकूलित केले आहे. हे 
 
 ## **वेरिएबल्स**
 
-### अर्थपूर्ण आणि उच्चारण्यास सोपी अशी वेरिएबल्स ची वापरा
+### अर्थपूर्ण आणि उच्चारण्यास सोपी अशी वेरिएबल्स वापरा
 
 **खराब:**
 
@@ -75,14 +75,14 @@ getUser();
 
 आपण कोड लिहितो कमी पण वाचतो जास्त. त्यामुळे हे महत्वाचे आहे की आपण जे कोड लिहितो ते वाचायला आणि शोधायला सोपे असेल त्या प्रकारे लिहा. जेव्हा आपण वेरिएबल्स चे नाव ह्या प्रकारे लिहीत नाही तर आपला कोड दुसऱ्याना वाचायला आणि समजायला अवघड जाते. [buddy.js](https://github.com/danielstjules/buddy.js) आणि [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md) सारखे टूल्स unnamed constants ला ओळखण्यास उपयोगी आहे.
 
-**Bad:**
+**खराब:**
 
 ```javascript
 // 86400000 हे नक्की काय आहे आणि कशा साठी वापरण्यात आले आहे?
 setTimeout(blastOff, 86400000);
 ```
 
-**Good:**
+**उत्तम:**
 
 ```javascript
 // त्यांना capitalized constants मधे डिक्लेअर करा.
@@ -91,11 +91,11 @@ const MILLISECONDS_PER_DAY = 60 * 60 * 24 * 1000; //86400000;
 setTimeout(blastOff, MILLISECONDS_PER_DAY);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ वर जा](#अनुक्रमणिका)**
 
-### Use explanatory variables
+### स्पष्टीकरणात्मक वेरिएबल्स वापरा
 
-**Bad:**
+**खराब:**
 
 ```javascript
 const address = "One Infinite Loop, Cupertino 95014";
@@ -106,7 +106,7 @@ saveCityZipCode(
 );
 ```
 
-**Good:**
+**उत्तम:**
 
 ```javascript
 const address = "One Infinite Loop, Cupertino 95014";
